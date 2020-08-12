@@ -1,0 +1,26 @@
+{
+  "name": "band-route-problem",
+  "version": "1.0.0",
+  "description": "The year is 2092. A budding young vocalist and his band have just enough money to buy a hovercar and begin their tour. They have struck deals with multiple venues and can set their own tour schedule, any venue in any order. Can you help them find the shortest route to take to hit all cities to maximize their fuel budget?",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maiamachine/band-route-problem.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maiamachine/band-route-problem/issues"
+  },
+  "homepage": "https://github.com/maiamachine/band-route-problem#readme",
+  "devDependencies": {
+    "d3": "^5.16.0",
+    "mathjs": "^7.1.0",
+    "parcel-bundler": "^1.12.4"
+  }
+}
