@@ -4,6 +4,7 @@ $purple: #974063;
 $red: #f54768;
 $dark-red: #dc3b59;
 $orange: #ff9678;
+$dark-orange: #ff9678;
 $white: #ffffff;
 
 $sidebar-color: $blue;
@@ -43,8 +44,8 @@ p {
 }
 
 button, button:hover, button:active {
-  background-color: $dark-red;
-  box-shadow:inset 0px 34px 0px -15px $red;
+  background-color: $dark-blue;
+  box-shadow: none;
 	border: none;
 	display:inline-block;
 	cursor:pointer;
@@ -54,19 +55,31 @@ button, button:hover, button:active {
 	padding:9px 23px;
 	text-decoration:none;
 	text-shadow: none;
+  margin-bottom: 20px;
+
+  &.selected {
+    background-color: $orange;
+  }
 }
 button:hover {
-  box-shadow:inset 0px 34px 0px -15px $dark-red;
-  background-color:$red;
+  //box-shadow:inset 0px 34px 0px -15px $dark-red;
+  //background-color:$red;
 }
 button:active {
+  background-color: $orange;
 	position:relative;
 	top:1px;
 }
+#createRouteBtn {
+  background-color: $dark-red;
+  box-shadow:inset 0px 34px 0px -15px $red;
+}
+
 
 .container {
   display: grid;
   grid-template-columns: 25% auto;
+  grid-template-rows: 1fr;
   grid-gap: 20px;
 }
 
@@ -75,6 +88,17 @@ button:active {
   grid-column-end: 2;
   background-color: $sidebar-color;
   padding:20px;
+
+  .buttonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  .routeButtonContainer {
+    justify-content: flex-end;
+  }
 }
 
 

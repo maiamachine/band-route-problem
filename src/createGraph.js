@@ -14,11 +14,9 @@ export default function(data) {
     .range([0, svgWidth]);
 
   const scaledData = data.map(item => [x(item[0]), y(item[1])]);
-
   const svg = d3.select("svg");
   const circles = svg.selectAll("circle").data(scaledData);
   const path = svg.selectAll("path");
-
 
   svg.attr("preserveAspectRatio", "xMinYMin meet").attr("viewBox", `0 0 ${svgWidth} ${svgHeight}`);
 
@@ -35,5 +33,4 @@ export default function(data) {
     .attr('d', d3.line()(scaledData))
     .style('fill', 'none')
     .attr("transform", "translate(20)");
-
 }
