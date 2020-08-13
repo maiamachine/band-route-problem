@@ -6,10 +6,6 @@ export default function(data) {
   let svgWidth = svgContainer.clientWidth;
   let svgHeight = window.innerHeight;
 
-  console.log(svgWidth, svgHeight);
-
-  const svg = d3.select("svg");
-
   const y = d3.scaleLinear()
     .domain([0, 1000])
     .range([0, svgHeight])
@@ -19,18 +15,25 @@ export default function(data) {
 
   const scaledData = data.map(item => [x(item[0]), y(item[1])]);
 
-  svg.attr("preserveAspectRatio", "xMinYMin meet").attr("viewBox", `0 0 ${svgWidth} ${svgHeight}`)
+  const svg = d3.select("svg");
+  const circles = svg.selectAll("circle").data(scaledData);
+  const path = svg.selectAll("path");
 
 
-  svg.selectAll("circle")
-    .data(scaledData)
-    .enter()
+  svg.attr("preserveAspectRatio", "xMinYMin meet").attr("viewBox", `0 0 ${svgWidth} ${svgHeight}`);
+
+  circles.exit().remove();
+  circles.enter()
     .append("circle")
       .attr("cx", d => d[0])
       .attr("cy", d => d[1])
       .attr("r", 5)
+      .attr("transform", "translate(20)");
 
+  path.remove();
   svg.append('path')
     .attr('d', d3.line()(scaledData))
-    .style('fill', 'none');
+    .style('fill', 'none')
+    .attr("transform", "translate(20)");
+
 }

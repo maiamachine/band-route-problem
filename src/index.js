@@ -18,8 +18,8 @@ const createNewRoute = function(arr, callTracker) {
 
   const randomRoute = shuffleArray(arr);
   const formattedData = formatData(randomRoute);
-  const totalDistance = calculateDistance(formattedData);
 
+  const totalDistance = calculateDistance(formattedData);
   const routeCounterElem = document.getElementById("routeCounterMessage").getElementsByTagName('span')[0];
   routeCounterElem.innerHTML = `${counter}`;
 
@@ -31,7 +31,7 @@ const createNewRoute = function(arr, callTracker) {
     const routeMapElem = document.getElementById("routeMap").getElementsByTagName('svg')[0];
     const distanceElem =  document.getElementById("distanceMessage");
     distanceElem.innerHTML = "";
-    routeMapElem.innerHTML = "";
+    //routeMapElem.innerHTML = "";
 
     createGraph(formattedData);
 

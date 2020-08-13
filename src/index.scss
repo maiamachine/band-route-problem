@@ -1,11 +1,14 @@
 $blue: #41436a;
+$dark-blue: #2a3950;
 $purple: #974063;
 $red: #f54768;
+$dark-red: #dc3b59;
 $orange: #ff9678;
+$white: #ffffff;
 
 $sidebar-color: $blue;
 
-$background-color: #2a3950;
+$background-color: $dark-blue;
 
 * {
   font-family: 'Roboto Condensed', sans-serif;
@@ -28,39 +31,24 @@ h2 {
 }
 
 h3 {
-  color: #ffffff;
+  color: $white;
   font-size: 30px;
 }
 
 p {
-  color: #ffffff;
+  color: $white;
   font-weight: 400;
   font-size:18px;
   line-height: 18px;
 }
 
-svg {
-
-  width: 100%;
-
-  path {
-      stroke: $red;
-  }
-
-  circle {
-      stroke: $orange;
-      fill: $purple;
-  }
-
-}
-
 button, button:hover, button:active {
-  background-color:#dc3b59;
+  background-color: $dark-red;
   box-shadow:inset 0px 34px 0px -15px $red;
 	border: none;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
+	color:$white;
 	font-size:18px;
   font-weight: 400;
 	padding:9px 23px;
@@ -68,7 +56,7 @@ button, button:hover, button:active {
 	text-shadow: none;
 }
 button:hover {
-  box-shadow:inset 0px 34px 0px -15px #dc3b59;
+  box-shadow:inset 0px 34px 0px -15px $dark-red;
   background-color:$red;
 }
 button:active {
@@ -89,13 +77,13 @@ button:active {
   padding:20px;
 }
 
+
 .main {
   #route-map {
-    
       display: inline-block;
       position: relative;
       width: 100%;
-      padding-bottom: 100%; /* aspect ratio */
+      padding-bottom: 100%;
       vertical-align: top;
       overflow: hidden;
 
@@ -107,6 +95,15 @@ button:active {
     }
   }
 
+  path {
+      stroke: $white;
+      opacity: 30%;
+  }
+
+  circle {
+      fill: $orange;
+      stroke: $orange;
+  }
 }
 
 #statusMessage {
