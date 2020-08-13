@@ -13,5 +13,5 @@ export default function(data) {
      return accumulator;
   }
 
-  return data.reduce(reducer, 0);
+  return Math.round(data.reduce(reducer, 0));
 }

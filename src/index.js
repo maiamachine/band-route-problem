@@ -21,6 +21,10 @@ const createNewRoute = function(arr, callTracker) {
   const formattedData = formatData(randomRoute);
   const totalDistance = calculateDistance(formattedData);
 
+  const routeCounterElem = document.getElementById("routeCounterMessage").getElementsByTagName('span')[0];
+  routeCounterElem.innerHTML = `${counter}`;
+
+
 
 
   if(!shortestRouteDistance || totalDistance < shortestRouteDistance) {
@@ -33,9 +37,9 @@ const createNewRoute = function(arr, callTracker) {
     createPath(formattedData);
     createCircles(formattedData);
 
-    const h2Elem = document.createElement("h2");
-    h2Elem.innerHTML = `Total Distance: ${totalDistance}`;
-    document.getElementById("distanceMessage").appendChild(h2Elem);
+    const h3Elem = document.createElement("h3");
+    h3Elem.innerHTML = `Total Distance: ${totalDistance} miles`;
+    document.getElementById("distanceMessage").appendChild(h3Elem);
   } else {
       if(counter < 1000) {
         setTimeout(() => {createNewRoute(points, 1)}, 0);

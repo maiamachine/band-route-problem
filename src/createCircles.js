@@ -11,5 +11,4 @@ export default function(data) {
       .attr("cx", d => d[0])
       .attr("cy", d => d[1])
       .attr("r", 5)
-      .style("fill", "black")
 }

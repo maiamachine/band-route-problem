@@ -2,17 +2,26 @@
 <html>
   <head>
   <title>Band Route Problem</title>
-
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/index.scss" />
 </head>
 <body>
-  <div>
-    <button id="createRouteBtn">Find Shorter Route</button>
-    <div id="distanceMessage"></div>
-    <div id="routeMap">
-        <p id="progressMessage">looking for shorter route...</p>
-        <svg width="1000" height="1000"></svg>
+  <div class="container">
+    <div class="sidebar">
+      <h2>Band Route Problem</h2>
+      <div id="distanceMessage"></div>
+      <button id="createRouteBtn">Find Shorter Route</button>
+      <p id="progressMessage">looking for shorter route...</p>
+      <p id="routeCounterMessage"><span></span> routes checked</p>
+    </div>
+    <div class="main">
+
+      <div id="routeMap">
+
+          <svg height="1000"></svg>
+      </div>
     </div>
   </div>
-  <script src="src/index.js"></script>
 </body>
+<script src="src/index.js"></script>
 </html>
