@@ -41,8 +41,9 @@ const createNewRoute = function(arr, callTracker) {
     h3Elem.innerHTML = `Total Distance: ${totalDistance} miles`;
     document.getElementById("distanceMessage").appendChild(h3Elem);
   } else {
-      if(counter < 1000) {
+      if(counter < 100000) {
         setTimeout(() => {createNewRoute(points, 1)}, 0);
+        document.getElementById("statusMessage").style.display = "block";
       }
   }
 }

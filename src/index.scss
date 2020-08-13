@@ -76,8 +76,6 @@ button:active {
 	top:1px;
 }
 
-
-
 .container {
   display: grid;
   grid-template-columns: 25% auto;
@@ -89,4 +87,8 @@ button:active {
   grid-column-end: 2;
   background-color: $sidebar-color;
   padding:20px;
+}
+
+#statusMessage {
+  display:none;
 }
