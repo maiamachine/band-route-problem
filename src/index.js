@@ -6,6 +6,7 @@ import shuffleArray from "./shuffleArray";
 import formatData from "./formatData";
 import createGraph from "./createGraph";
 import calculateDistance from "./calculateDistance";
+import setButtonActive from "./setButtonActive";
 
 var currentPoints = getPoints40();
 var shortestRouteDistance = null;
@@ -36,17 +37,19 @@ const createNewRoute = function(arr, recursive) {
     distanceMessage.appendChild(h3Elem);
 
   } else {
-     if(routeCounter < 100000) {
+     if(routeCounter < 1000) {
         setTimeout(() => {createNewRoute(currentPoints, true)}, 100);
-        statusMessage.style.display = "block";
       }
   }
 }
 
 document.getElementById("get40CitiesBtn").addEventListener("click", function(){
-  var current = document.getElementsByClassName("active");
-  current[0].className = current[0].className.replace(" active", "");
-  this.className += " active";
+  
+  if(this.classList.contains("active")) {
+    return;
+  }
+  
+  setButtonActive(this);
   currentPoints = getPoints40();
   routeCounter = 1;
   shortestRouteDistance = null;
@@ -54,9 +57,12 @@ document.getElementById("get40CitiesBtn").addEventListener("click", function(){
 })
 
 document.getElementById("get200CitiesBtn").addEventListener("click", function(){
-  const activeBtns = document.querySelectorAll(".active");
-  activeBtns.forEach(button => button.classList.remove('active'));
-  this.className += " active";
+
+  if(this.classList.contains("active")) {
+    return;
+  }
+
+  setButtonActive(this);
   currentPoints = getPoints200();
   routeCounter = 0;
   shortestRouteDistance = null;
@@ -64,9 +70,12 @@ document.getElementById("get200CitiesBtn").addEventListener("click", function(){
 })
 
 document.getElementById("get500CitiesBtn").addEventListener("click", function(){
-  var current = document.getElementsByClassName("active");
-  current[0].className = current[0].className.replace(" active", "");
-  this.className += " active";
+
+  if(this.classList.contains("active")) {
+    return;
+  }
+
+  setButtonActive(this);
   currentPoints = getPoints500();
   routeCounter = 0;
   shortestRouteDistance = null;

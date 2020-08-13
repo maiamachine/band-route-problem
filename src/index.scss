@@ -61,6 +61,9 @@ button, button:hover, button:active {
     background-color: $orange;
   }
 }
+
+button:focus {outline:0;}
+
 button:hover {
   //box-shadow:inset 0px 34px 0px -15px $dark-red;
   //background-color:$red;

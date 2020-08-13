@@ -1,4 +1,8 @@
-import * as d3 from "d3";
+import {
+  scaleLinear,
+  select,
+  line
+} from "d3";
 
 export default function(data) {
 
@@ -6,15 +10,15 @@ export default function(data) {
   let svgWidth = svgContainer.clientWidth;
   let svgHeight = window.innerHeight;
 
-  const y = d3.scaleLinear()
+  const y = scaleLinear()
     .domain([0, 1000])
     .range([0, svgHeight])
-  const x = d3.scaleLinear()
+  const x = scaleLinear()
     .domain([0, 1000])
     .range([0, svgWidth]);
 
   const scaledData = data.map(item => [x(item[0]), y(item[1])]);
-  const svg = d3.select("svg");
+  const svg = select("svg");
   const circles = svg.selectAll("circle").data(scaledData);
   const path = svg.selectAll("path");
 
@@ -30,7 +34,7 @@ export default function(data) {
 
   path.remove();
   svg.append('path')
-    .attr('d', d3.line()(scaledData))
+    .attr('d', line()(scaledData))
     .style('fill', 'none')
     .attr("transform", "translate(20)");
 }
