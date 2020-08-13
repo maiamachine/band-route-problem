@@ -7,8 +7,7 @@ import formatData from "./formatData";
 import createGraph from "./createGraph";
 import calculateDistance from "./calculateDistance";
 
-
-var points = getPoints40();
+var currentPoints = getPoints40();
 var shortestRouteDistance = null;
 var counter = 0;
 
@@ -37,16 +36,36 @@ const createNewRoute = function(arr, callTracker) {
     h3Elem.innerHTML = `Total Distance: ${totalDistance} miles`;
     document.getElementById("distanceMessage").appendChild(h3Elem);
   } else {
-      if(counter < 100000) {
-        setTimeout(() => {createNewRoute(points, 1)}, 0);
+     if(counter < 100000) {
+        setTimeout(() => {createNewRoute(currentPoints, 1)}, 0);
         document.getElementById("statusMessage").style.display = "block";
       }
   }
 }
 
-document.getElementById("createRouteBtn").addEventListener("click", function(){
-
-  createNewRoute(points);
+document.getElementById("get40CitiesBtn").addEventListener("click", function(){
+  currentPoints = getPoints40();
+  counter = 0;
+  shortestRouteDistance = null;
+  createNewRoute(currentPoints);
 })
 
-createNewRoute(points);
+document.getElementById("get200CitiesBtn").addEventListener("click", function(){
+  currentPoints = getPoints200();
+  counter = 0;
+  shortestRouteDistance = null;
+  createNewRoute(currentPoints);
+})
+
+document.getElementById("get500CitiesBtn").addEventListener("click", function(){
+  currentPoints = getPoints500();
+  counter = 0;
+  shortestRouteDistance = null;
+  createNewRoute(currentPoints);
+})
+
+document.getElementById("createRouteBtn").addEventListener("click", function(){
+  createNewRoute(currentPoints);
+})
+
+createNewRoute(currentPoints);
