@@ -8,25 +8,29 @@
 <body>
   <div class="container">
     <div class="sidebar">
-      <h2>Band Route Problem</h2>
-      <div id="distanceMessage"></div>
-      <div class="buttonContainer">
-        <button id="get40CitiesBtn" class="active">40 Cities</button>
-        <button id="get200CitiesBtn">200 Cities</button>
-        <button id="get500CitiesBtn">500 Cities</button>
+      <div>
+        <h2>Band Route Problem</h2>
+          <div id="distanceMessage"></div>
+          <div class="buttonContainer">
+            <button id="get40CitiesBtn" class="active">40 Cities</button>
+            <button id="get200CitiesBtn">200 Cities</button>
+            <button id="get500CitiesBtn">500 Cities</button>
+          </div>
       </div>
-      <div class="buttonContainer">
-        <div>
-          <button id="createRouteBtn">Find Shorter Route</button>
-        </div>
-        <div id="statusMessage">
-          <p id="routeCounterMessage"><span></span> routes checked (max 1000)</p>
+      <div>
+        <div class="buttonContainer">
+          <div>
+            <button id="createRouteBtn">Find Shorter Route</button>
+          </div>
+          <div id="statusMessage">
+            <p id="routeCounterMessage"><span></span> routes calculated (max 1000)</p>
+          </div>
         </div>
       </div>
     </div>
     <div class="main" id="svgContainer">
       <div id="routeMap">
-          <svg class=""></svg>
+          <svg></svg>
       </div>
     </div>
   </div>

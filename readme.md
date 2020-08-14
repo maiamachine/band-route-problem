@@ -25,4 +25,25 @@ If you have questions on the challenge, please contact Jared Sartin: jared@leftf
 
 # Candidate Notes:
 
+For this challenge I chose to focus on displaying the routes graphically using the d3 library while also providing the user the opportunity to generate new routes and to find shorter and shorter routes. Due to the time constraints of this challenge, I was unable to create an algorithm to determine the shortest route, however I still wanted to provide the user with some ability to calculate shorter and shorter routes on demand.  I did this by:
+1. Displaying a randomly selected route to the user along with the total distance of that route.
+2. Providing a button to the user that will search for a shorter route.
+3. Creating a function that calculates the total distance of the current route and recursively calls itself until it finds a shorter route to display to the user.  I limited this recursion to 1000 calls to prevent it running almost infinitely (in the case of the 200 and 500 city options).
+
+I used Parcel as a bundler for this challenge so that I could break my code apart into modules and easily install dependencies.
+
+To view this challenge, download the code and run ```npm install``` and ```npm run dev```
+
+As far as time, I spent about 4 hours reviewing d3 and about 4 hours actually building out the project.  If I had more time I would have addressed the following:
+* mobile first design: the design currently works on desktop only
+* d3 graph bugs: when you create shorter routes the path stops lining up perfectly with the cities.  I ran out of time to address this.
+* transitions: I wanted to have some animated transitions in between routes on the graph but ran out of time.
+* graph labels: I wanted to add some more labels to the graph but ran out of time
+* algorithm: I would have loved to figure out a better algorithm for getting the shortest route.
+* code cleanup: Given more time I think I could probably make some code improvements
+
+
+
 ### Fill in comments, external tool usage, and time tracking
+
+

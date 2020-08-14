@@ -2,7 +2,7 @@ import {
   scaleLinear,
   select,
   line
-} from "d3";
+}  from "d3";
 
 export default function(data) {
 
@@ -23,6 +23,7 @@ export default function(data) {
   const path = svg.selectAll("path");
 
   svg.attr("preserveAspectRatio", "xMinYMin meet").attr("viewBox", `0 0 ${svgWidth} ${svgHeight}`);
+  //svg.attr("transform", "translate(60 40)");
 
   circles.exit().remove();
   circles.enter()
@@ -30,11 +31,11 @@ export default function(data) {
       .attr("cx", d => d[0])
       .attr("cy", d => d[1])
       .attr("r", 5)
-      .attr("transform", "translate(20)");
+      .attr("transform", "translate(60 40)");
 
   path.remove();
   svg.append('path')
     .attr('d', line()(scaledData))
     .style('fill', 'none')
-    .attr("transform", "translate(20)");
+    .attr("transform", "translate(60 40)");
 }

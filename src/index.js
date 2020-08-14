@@ -17,9 +17,9 @@ const createNewRoute = function(arr, recursive) {
   const randomRoute = shuffleArray(arr);
   const formattedData = formatData(randomRoute);
   const totalDistance = calculateDistance(formattedData);
+
   const routeCounterElem = document.getElementById("routeCounterMessage").getElementsByTagName('span')[0];
   const distanceElem =  document.getElementById("distanceMessage");
-  const statusMessage = document.getElementById("statusMessage");
 
   routeCounter += 1;
   routeCounterElem.innerHTML = `${routeCounter}`;
@@ -27,7 +27,6 @@ const createNewRoute = function(arr, recursive) {
   if(!shortestRouteDistance || totalDistance < shortestRouteDistance) {
     
     shortestRouteDistance = totalDistance;
-    
     distanceElem.innerHTML = "";
 
     createGraph(formattedData);
@@ -51,7 +50,7 @@ document.getElementById("get40CitiesBtn").addEventListener("click", function(){
   
   setButtonActive(this);
   currentPoints = getPoints40();
-  routeCounter = 1;
+  routeCounter = 0;
   shortestRouteDistance = null;
   createNewRoute(currentPoints);
 })
