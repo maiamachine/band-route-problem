@@ -23,7 +23,6 @@ export default function(data) {
   const path = svg.selectAll("path");
 
   svg.attr("preserveAspectRatio", "xMinYMin meet").attr("viewBox", `0 0 ${svgWidth} ${svgHeight}`);
-  //svg.attr("transform", "translate(60 40)");
 
   circles.exit().remove();
   circles.enter()

@@ -12,7 +12,7 @@ var currentPoints = getPoints40();
 var shortestRouteDistance = null;
 var routeCounter = 0;
 
-const createNewRoute = function(arr, recursive) {
+const createNewRoute = function(arr) {
 
   const randomRoute = shuffleArray(arr);
   const formattedData = formatData(randomRoute);
@@ -37,13 +37,13 @@ const createNewRoute = function(arr, recursive) {
 
   } else {
      if(routeCounter < 1000) {
-        setTimeout(() => {createNewRoute(currentPoints, true)}, 100);
+        setTimeout(() => {createNewRoute(currentPoints)}, 100);
       }
   }
 }
 
 document.getElementById("get40CitiesBtn").addEventListener("click", function(){
-  
+
   if(this.classList.contains("active")) {
     return;
   }
